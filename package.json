@@ -1,0 +1,19 @@
+{
+  "name": "trying-out-webpack",
+  "version": "1.0.0",
+  "description": "trying out webpack",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development",
+    "watch": "webpack --watch --mode development"
+  },
+  "author": "Pep del Bano",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}
