@@ -1,7 +1,7 @@
 const path = require("path"); //from Node.js
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/js/index.js",
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "dist")
@@ -15,9 +15,13 @@ module.exports = {
         use: {
           loader: "babel-loader", //to communicate babel with webpack
           options: {
-            presets: ["es2015"]
+            presets: ["@babel/preset-env"]
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
       }
     ]
   }

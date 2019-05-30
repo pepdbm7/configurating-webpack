@@ -1,3 +1,3 @@
 {
-  "presets": ["es2015"] //the JS version in which we want to transpile our code to!
+  "presets": ["@babel/preset-env"] //the JS version in which we want to transpile our code to!
 }
