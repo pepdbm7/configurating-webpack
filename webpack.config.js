@@ -1,13 +1,19 @@
 const path = require("path"); //from Node.js
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    home: "./src/js/home.js",
-    about: "./src/js/about.js"
+    home: "./src/js/home.js"
   },
   output: {
     filename: "[name].bundle.js",
     path: path.join(__dirname, "dist")
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000, //by default it's the 5000
+    openPage: "/home.html" //to open direclty the homepage!
   },
   module: {
     //loaders:
@@ -46,5 +52,19 @@ module.exports = {
         }
       }
     }
-  }
+  },
+  plugins: [
+    //home page:
+    new HtmlWebpackPlugin({
+      filename: "home.html", //how we want to call the output file
+      template: "src/home.html", //take template from this html (input)
+      title: "Home" //if we want to change the tab title for every new html we see
+    }),
+    //about page:
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: "src/about.html",
+      title: "About"
+    })
+  ]
 };

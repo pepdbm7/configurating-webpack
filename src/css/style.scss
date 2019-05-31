@@ -1,5 +1,6 @@
 $primary: #7198f1;
 $secondary: #cbf8cb;
+$success: #14f59f;
 
 h1 {
   color: $primary;
@@ -7,4 +8,24 @@ h1 {
 
 p {
   color: $secondary;
+}
+
+li {
+  list-style-type: none;
+  padding: 5px;
+  color: $primary;
+  background: $secondary;
+  &:nth-child(2n + 1) {
+    color: $secondary;
+    background: $primary;
+  }
+}
+
+input[type="submit"] {
+  padding: 8px;
+  background: $success;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
 }
