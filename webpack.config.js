@@ -35,5 +35,16 @@ module.exports = {
         ]
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/, //regex to include code of node_modules inside commons
+          name: "common",
+          chunks: "all"
+        }
+      }
+    }
   }
 };
