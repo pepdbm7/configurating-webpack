@@ -1,9 +1,12 @@
 const path = require("path"); //from Node.js
 
 module.exports = {
-  entry: "./src/js/index.js",
+  entry: {
+    home: "./src/js/home.js",
+    about: "./src/js/about.js"
+  },
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.join(__dirname, "dist")
   },
   module: {
@@ -22,6 +25,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" }
+        ]
       }
     ]
   }
